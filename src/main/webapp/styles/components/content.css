@@ -1,0 +1,47 @@
+	.content>.z-macro{
+		display: block;
+	}
+
+	.page-content{
+		padding: 1rem 0.5rem;
+		font-size: 1rem;
+		max-width: 80rem;
+		width: 100%;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 100%;
+	}
+	
+	.sidebar-left__container{
+		display: none;
+	}
+	
+	.sidebar-right__container{
+		display: none;
+	}
+	
+	@media only screen and (min-width: 768px) {
+		.page-content{
+			gap: 0.5rem;
+			grid-template-columns: 2fr 5fr;
+		}
+		
+		.sidebar-left__container{
+			display: block;
+		}
+		
+		.sidebar-right__container{
+			display: none;
+		}
+	}
+	
+	@media only screen and (min-width: 1024px) {
+		.page-content{
+			gap: 1rem;
+			grid-template-columns: 240px 2fr 1fr;
+		}
+		
+		.sidebar-right__container{
+			display: block;
+		}
+	}

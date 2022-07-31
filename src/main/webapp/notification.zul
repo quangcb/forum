@@ -1,0 +1,48 @@
+<!DOCTYPE index.zul>
+<?root-attributes lang="vi"?>
+<?meta name="description" content="Thông báo - Fita's Forum"?>
+<?meta http-equiv="Content-Type" content="text/html; charset=UTF-8"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="apple-touch-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="stylesheet" type="text/css" href="/styles/index.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/header.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/footer.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/search.css"?>
+
+<?component name="Header" macroURI="/components/header.zul"?>
+<?component name="Footer" macroURI="/components/footer.zul"?>
+<zk xmlns:n="native" xmlns:ca="client/attribute">
+	<div sclass="header">
+		<Header sclass="header__container"/>
+	</div>
+
+	<div sclass="story" apply="vnua.fita.controller.NotificationController">
+		<div sclass="label-header">
+			<label id="titleLabel" style="font-size: 1.75rem; padding-left: 1rem; font-weight: 600" value="Thông báo"/>
+		</div>
+		<div sclass="content">
+			<n:ul>
+				<n:li sclass="tab-post">
+					<label value="Bài viết"/>
+				</n:li>
+			</n:ul>
+			
+			<listbox id="postListbox" mold="paging" pageSize="10" style="border: 0px; border-radius: 6px;" model="${$composer.notifications}" emptyMessage="Không tìm thấy thông báo">
+				<template name="model">
+					 <listitem sclass="listItem">
+						<listcell>
+								<div>
+									<label value="Quản trị viên đã xoá bài viết của bạn có tiêu đề '${each.postTitle }' vì lý do vi phạm nội quy của Fita's Forum."/>
+								</div>
+						</listcell>
+					</listitem> 
+				</template>
+			</listbox>
+		</div>
+	</div>
+	
+	<div sclass="footer">
+		<Footer />
+	</div>
+</zk>

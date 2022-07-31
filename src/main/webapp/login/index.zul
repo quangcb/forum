@@ -1,0 +1,45 @@
+<!DOCTYPE login.zul>
+<?root-attributes lang="en"?>
+<?meta name="description" content="Trang đăng nhập diễn đàn Fita's Forum"?>
+<?meta http-equiv="Content-Type" content="text/html; charset=UTF-8"?>
+<?link rel="apple-touch-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"?>
+<?page title="Fita's Forum - Đăng nhập hoặc đăng ký"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="stylesheet" type="text/css" href="/styles/login.css"?>
+<zk xmlns:n="native">
+	<div sclass="bg" id="loginForm"
+		apply="vnua.fita.controller.LoginController">
+		<div sclass="form">
+			<div>
+				<div sclass="title">
+					<n:label>Fita's Forum</n:label>
+				</div>
+				<n:form>
+					<div sclass="">
+						<div>
+							<n:label sclass="label-login" for="account" style="color:white">Tài khoản</n:label>
+						</div>
+						<textbox id="account" sclass="textbox-login"
+							focus="true" />
+					</div>
+					<div sclass="">
+						<div>
+							<n:label sclass="label-login" for="pasword">Mật khẩu</n:label>
+						</div>
+						<textbox id="password" sclass="textbox-login"
+							type="password" />
+					</div>
+					<label id="message" style="color: red" value="&#160;" />
+					<button id="login" sclass="login"
+						label="Đăng nhập" />
+					<n:p style="text-align: center" sclass="label-login">Quên mật khẩu?</n:p>
+					<n:hr></n:hr>
+					<div sclass="signup">
+						<button id="orderBtn" label="Tạo tài khoản" />
+					</div>
+				</n:form>
+			</div>
+		</div>
+	</div>
+</zk>

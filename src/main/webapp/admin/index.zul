@@ -1,0 +1,49 @@
+<!DOCTYPE adminindex.zul>
+
+<?meta name="description" content="Admin - CodeCore"?>
+<?meta http-equiv="Content-Type" content="text/html; charset=UTF-8"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="apple-touch-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/footer.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/admin.css"?>
+<?component name="Header" macroURI="/components/header.zul"?>
+<?component name="Footer" macroURI="/components/footer.zul"?>
+<zk>
+<style>
+	.header{
+		display: flex;
+	    align-items: center;
+	    height: 3.5rem;
+	    justify-content: space-evenly;
+	}
+	.header div span{
+		font-weight: 600;
+	}
+	
+	.content-right{
+		height: 70vh;
+	}
+</style>
+	<div sclass="header" >
+		<div>Xin chào, Admin</div>
+		<div>
+			<a href="/admin/exportExcel.zul">Xuất thông tin</a>
+		</div>
+		<div>
+			<a href="/admin/importExcel.zul">Thêm sinh viên</a>
+		</div>
+		<div sclass="create" if="${empty sessionScope.userCredential.anonymous}" 
+			apply="vnua.fita.controller.LoginController">			
+			<button id="pageLogin" sclass="btnCreate"
+				label="Đăng xuất" />
+		</div>
+	</div>
+	
+	<div class="content-right" self="@insert(content)" apply="vnua.fita.controller.ApprovalController" if="${not empty sessionScope.superAdminCredential.anonymous}">
+	</div>
+	
+	<div sclass="footer">
+		<Footer />
+	</div>
+</zk>

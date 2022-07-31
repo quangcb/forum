@@ -1,0 +1,28 @@
+<?page title="Export Link Students - Fita's Forum" contentType="text/html;charset=UTF-8"?>
+
+<?root-attributes lang="vi"?>
+<?page title="Xuất dữ liệu sinh viên - Fita's Forum"?>
+<?meta name="description" content="Xuất dữ liệu sinh viên - Fita's Forum"?>
+<?meta http-equiv="Content-Type" content="text/html; charset=UTF-8"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="apple-touch-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://keikai.io/2019/zul/zul.xsd">
+	
+	<hlayout hflex="1" vflex="1"
+		apply="vnua.fita.model.ExportComposer">
+		<spreadsheet id="ss" hflex="1" vflex="1" showFormulabar="true"
+			showContextMenu="true" showToolbar="true" showSheetbar="true"
+			src="/WEB-INF/books/demo_sample.xlsx" />
+		<groupbox width="300px">
+			<caption label="Excel exporter" />
+			<button id="exportExcel" label="Xuất Excel" />
+			<div style="margin-top: 10px">
+				<a href="/admin/post.zul" label="Quay lại"/>
+			</div>
+		</groupbox>
+	</hlayout>
+</zk>

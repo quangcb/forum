@@ -1,0 +1,75 @@
+<!DOCTYPE registration.zul>
+<?root-attributes lang="en"?>
+<?meta name="description" content="Trang đăng ký diễn đàn Fita's Forum"?>
+<?meta http-equiv="Content-Type" content="text/html; charset=UTF-8"?>
+<?link rel="apple-touch-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"?>
+<?page title="Fita's Forum - Đăng ký"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="stylesheet" type="text/css" href="/styles/login.css"?>
+<zk xmlns:ca="client/attribute">
+	<window id="modalDialog" title="Đăng ký" width="100%"
+		position="center,center" closable="true"
+		action="show: slideDown;hide: slideUp" style="padding: 0"
+		apply="vnua.fita.controller.RegistrationController">
+		<grid id="formGrid" ctrlKeys="^h" width="100%">
+			<columns>
+				<column hflex="4"></column>
+				<column hflex="5"></column>
+			</columns>
+			<rows>
+				<row id="usernameRow">
+					Tài khoản
+					<textbox id="usernameBox" focus="true" width="100%"
+						constraint="no empty: Nhập tên tài khoản, /^((?!admin).)*$/: Nhập đúng mã sinh viên" />
+				</row>
+				<row id="passwordRow">
+					Mật khẩu mới
+					<textbox id="passwordBox" width="100%"
+						ca:autocomplete="new-password" type="password"
+						constraint="no empty: Nhập mật khẩu" />
+				</row>
+				<row id="nameRow">
+					Họ tên
+					<textbox id="nameBox" width="100%"
+						constraint="no empty: Nhập họ tên" />
+				</row>
+				<row id="phoneRow">
+					Số di động
+					<textbox id="phoneBox" width="100%"
+						constraint="no empty: Nhập số điện thoại, /(|((\+)84)|0)?(3|5|7|8|9)+([0-9]{8})\b/" />
+				</row>
+				<row id="emaildRow">
+					Email
+					<textbox id="emailBox" width="100%"
+						constraint="/.+@.+\.[a-z]+/: Vui lòng nhập địa chỉ email" />
+				</row>
+				<row>
+					Giới tính
+					<radiogroup id="genderRadio">
+						<radio label="Nam" value="male" checked="true" />
+						<radio label="Nữ" value="female" />
+					</radiogroup>
+				</row>
+				<row>
+					Ngày sinh
+					<datebox id="birthdayBox" width="100%"
+						constraint="no empty: Nhập ngày sinh , no today, no future"
+						format="dd/MM/yyyy" />
+				</row>
+				<row spans="2" align="center">
+					<hlayout>
+						<checkbox sclass="acceptTermBox" />
+						<label value="Tôi đồng ý với điều khoản sử dụng" />
+					</hlayout>
+				</row>
+				<row spans="2" align="right">
+					<hlayout>
+						<button id="submitButton" label="Đăng ký"
+							disabled="true" />
+					</hlayout>
+				</row>
+			</rows>
+		</grid>
+	</window>
+</zk>

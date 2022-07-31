@@ -1,0 +1,43 @@
+<!DOCTYPE new.zul>
+<?component name="Editor" macroURI="/wysiwyg_editor.zul"?>
+<!-- <?link rel="stylesheet" type="text/css" href="../styles/login.css"?> -->
+<zk xmlns:n="native">
+	<window sclass="modal" id="modalDialog" title="Đăng nhập" height="100%" width="100%"
+		position="center,center" closable="true"
+		action="show: slideDown;hide: slideUp" style="padding: 0"
+		apply="vnua.fita.controller.HomeController">
+		<div sclass="bg" id="ModalLoginForm"
+		apply="vnua.fita.controller.LoginController">
+			<div sclass="form">
+				<div>
+					<div sclass="title">
+						<n:label>CodeCore</n:label>
+					</div>
+					<n:form>
+						<div sclass="">
+							<div>
+								<n:label sclass="label-login" for="account" style="color:white">Tài khoản</n:label>
+							</div>
+							<textbox id="account" sclass="textbox-login"
+								focus="true" />
+						</div>
+						<div sclass="">
+							<div>
+								<n:label sclass="label-login" for="pasword">Mật khẩu</n:label>
+							</div>
+							<textbox id="password" sclass="textbox-login"
+								type="password" />
+						</div>
+						<label id="message" style="color: red" value="&#160;" />
+						<button id="modalLogin" sclass="login" label="Đăng nhập" />
+						<n:p style="text-align: center" sclass="label-login">Quên mật khẩu?</n:p>
+						<n:hr></n:hr>
+						<div sclass="signup">
+							<button id="orderBtn" label="Tạo tài khoản" />
+						</div>
+					</n:form>
+				</div>
+			</div>
+		</div>
+	</window>
+</zk>

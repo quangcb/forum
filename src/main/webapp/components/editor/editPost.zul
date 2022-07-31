@@ -1,0 +1,10 @@
+<!DOCTYPE new.zul>
+<?component name="Editor" macroURI="/components/editor/editorPost.zul"?>
+<zk>
+	<window sclass="modal" id="modalDialog" title="Sửa bài đăng" height="100%" width="100%"
+		position="center,center" closable="true"
+		action="show: slideDown;hide: slideUp" style="padding: 0"
+		apply="vnua.fita.controller.UpdatePostController">
+		<Editor />
+	</window>
+</zk>

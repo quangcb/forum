@@ -1,0 +1,50 @@
+<!DOCTYPE index.zul>
+<?root-attributes lang="vi"?>
+<?meta name="description" content="Settings - CodeCore"?>
+<?meta http-equiv="Content-Type" content="text/html; charset=UTF-8"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="apple-touch-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"?>
+
+<?page title="Settings - CodeCore" contentType="text/html;charset=UTF-8"?>
+<?component name="Content" macroURI="/components/content.zul"?>
+<?component name="Header" macroURI="/components/header.zul"?>
+<?component name="Footer" macroURI="/components/footer.zul"?>
+<?component name="TabChangePassword" macroURI="/settings/tabChangePassword.zul"?>
+<?component name="TabUpdateProfile" macroURI="/settings/tabUpdateProfile.zul"?>
+<?link rel="stylesheet" type="text/css" href="/styles/index.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/header.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/footer.css"?>
+<zk>
+	<div sclass="header">
+		<Header sclass="header__container"/>
+	</div>
+	<div style="width: 90%" sclass="dollar" self="@define(content)">
+		<tabbox width="100%" mold="accordion"
+			apply="vnua.fita.controller.UpdateProfileController">
+			<tabs>
+				<tab label="Đổi mật khẩu" id="tab3" />
+				<tab label="Cập nhật thông tin cá nhân" id="tab4" />
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<TabChangePassword />
+				</tabpanel>
+				<tabpanel>
+					<TabUpdateProfile />
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+		<div style=" border-radius: 50%; width: 40px; height: 40px; overflow: hidden">
+			<image id="previewImage" width="100%" height="100%"/>
+		</div>
+	Tải ảnh của bạn:
+	<fileupload label="Tải lên"
+		onUpload="previewImage.setContent(event.media)" />
+	<button id="updateImageBtn" hflex="1" label="Cập nhật" />
+	</div>
+	
+	<div sclass="footer">
+		<Footer />
+	</div>
+</zk>

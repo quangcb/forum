@@ -1,0 +1,42 @@
+<!DOCTYPE sidebar.zul>
+<zk xmlns:n="native">
+	<div sclass="widget">
+		<a href="#">
+			<image height="100%" width="100%" src="/images/banner.png" tooltiptext="banner" sclass="banner-img"/>
+		</a>
+		<label sclass="card" value="Hội nghị chào đón nhất dành cho các lập trình viên mới bắt đầu sự nghiệp và nhà vô địch của họ." />
+		<n:hr />
+		<div>
+			<a style="color: rgb(59, 73, 223); text-decoration: none;" href="#">→ CodeLand 2022 diễn ra vào hai ngày 16 và 17 tháng 6 năm 2022</a>
+		</div>
+		<n:br />
+		<label style="font-style: italic;" value=" Được sản xuất bởi CodeNewbie và DEV, hai cộng đồng phần mềm được xây dựng trên Forem." />
+	</div>
+	
+	<div sclass="link-content">
+		<div sclass="link-content__title">
+			<label value="Danh sách" />
+			<div>
+				<a href="#" label="Xem thêm" />
+			</div>
+		</div>
+		<div>
+			Tạo một trò chơi Pokemon đơn giản với JavaScript
+		</div>
+		<div>
+			Hướng dẫn setup môi trường lập trình Golang với Visual Studio Code.
+		</div>
+		<div>
+			Lập trình backend là gì? Tự học lập trình REST API với Golang
+		</div>
+		<div>
+			Nếu trong 2 tháng thử việc mình chưa hoàn thành tốt thì sao?
+		</div>
+		<div>
+			Không thể gửi OTP qua phone number với firebase
+		</div>
+		<div>
+			Queue – Sự sắp xếp có chủ đích giải quyết vấn đề concurrency
+		</div>
+	</div>
+</zk>

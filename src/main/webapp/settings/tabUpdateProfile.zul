@@ -1,0 +1,50 @@
+<!DOCTYPE index.zul>
+<zk xmlns:ca="client/attribute">
+	<grid apply="vnua.fita.controller.UpdateProfileController">
+		<rows id="profileBox">
+			<row id="nameRow">
+				Họ tên
+				<textbox id="nameBox"
+					constraint="no empty: Nhập họ tên" />
+			</row>
+			<row id="classRow">
+				Lớp
+				<textbox id="classBox"
+					constraint="no empty: Nhập tên lớp" />
+			</row>
+			<row id="addressRow">
+				Địa chỉ
+				<textbox id="addressBox"
+					constraint="no empty: Nhập địa chỉ" />
+			</row>
+			<row id="phoneRow">
+				Số di động
+				<textbox id="phoneBox"
+					constraint="no empty: Nhập số điện thoại, /(|((\+)84)|0)?(3|5|7|8|9)+([0-9]{8})\b/" />
+			</row>
+			<row id="emailRow">
+				Email
+				<textbox id="emailBox"
+					constraint="no empty: Nhập tên lớp" />
+			</row>
+			<row id="parentNameRow">
+				Tên bố
+				<textbox id="fatherNameBox"
+					constraint="no empty: Nhập tên phụ huynh" />
+			</row>
+			<row id="parentPhoneRow">
+				Số di động của phụ huynh
+				<textbox id="fatherPhoneBox"
+					constraint="no empty: Nhập số điện thoại, /(|((\+)84)|0)?(3|5|7|8|9)+([0-9]{8})\b/" />
+			</row>
+			<row id="aboutRow">
+				Mô tả về bản thân
+				<textbox id="aboutBox" />
+			</row>
+			<row>
+				<button id="saveProfile" label="Cập nhật" />
+			</row>
+		</rows>
+	</grid>
+
+</zk>

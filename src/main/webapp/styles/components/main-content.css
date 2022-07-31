@@ -1,0 +1,71 @@
+p img{
+		width: 100% !important;
+		height:100% !important;
+	}
+	
+	.story{
+		background-color: rgb(255,255,255);
+		margin: 0.5rem 0;
+		box-shadow: 0 0 0 1px rgb(23,23,23,0.05);
+		border-radius: 6px;
+	}
+	
+	.story div{
+		padding: 1.25rem;
+	}
+	
+	.z-focus-a{
+		display: none !important;
+		visibility:hidden;
+	}
+	
+	.z-listbox-body .z-listbox-emptybody td{
+		color: rgb(0,0,0) !important;
+	}
+	
+	.z-listbox-body{
+		padding: 0 !important;
+	}
+	
+	.z-listcell-content{
+		background-color: white;
+		cursor: default;
+		padding: 0 !important;
+	}
+	
+	.z-listcell-content > .z-div{
+		padding: 1rem 0.5rem;
+	}
+	
+	.z-paging{
+		background-color: #cbcbcb;
+    	border-radius: 5px;
+	}
+	
+	.z-paging-info{
+		color: rgb(0, 0, 0);
+	}
+	
+	.display-name{
+		font-size: 15px; 
+		color:rgb(5,5,5) !important; 
+		font-weight: 600;
+	}
+	.display-name:hover{
+		color: rgb(47,58,178) !important;
+		text-decoration: underline !important;
+	}
+	
+	.list-tag{
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 1.25rem !important;
+	}
+
+	.list-tag div{
+		display: flex;
+		border-radius: .25rem;
+		padding: .5rem;
+		margin: .5rem .5rem 0 0;
+		background-color: rgb(237,237,237);
+	}

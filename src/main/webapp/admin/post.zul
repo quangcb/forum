@@ -1,0 +1,43 @@
+<!DOCTYPE index.zul>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/admin/index.zul"?>
+<?link rel="apple-touch-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="stylesheet" type="text/css" href="/styles/index.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/header.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/footer.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/admin.css"?>
+<zk>
+	<div self="@define(content)" apply="vnua.fita.controller.ApprovalController">
+		<listbox id="postListbox" mold="paging" pageSize="10" style="border: 0px; border-radius: 6px;" model="${$composer.posts}" emptyMessage="Không tìm thấy kết quả">
+			<template name="model">
+				 <listitem sclass="listItem">
+				 	<listcell>
+						<label value="${each.ownerStudentCode}" sclass="display-name" />
+					</listcell>
+					<listcell>
+						<label value="${each.ownerDisplayName}" sclass="display-name" />
+					</listcell>
+					<listcell>
+						<label value="${each.creationDate}" />
+					</listcell>
+					<listcell>
+							<html content="${each.title}"/>
+					</listcell>
+					<listcell>
+						<div>
+							<div sclass="list-tag">
+								<div if="${not empty each.tag1}"><label value="#${each.tag1 }"/></div>
+								<div if="${not empty each.tag2}"><label value="#${each.tag2 }"/></div>
+								<div if="${not empty each.tag3}"><label value="#${each.tag3 }"/></div>
+								<div if="${not empty each.tag4}"><label value="#${each.tag4 }"/></div>
+							</div>
+						</div>
+					</listcell>
+					<listcell>
+						<button id="delete${each.postId}" sclass="delete-btn" image="/images/delete.png" forward="onClick=postListbox.onDelete"/>
+					</listcell>
+				</listitem> 
+			</template>
+		</listbox>
+	</div>
+</zk>

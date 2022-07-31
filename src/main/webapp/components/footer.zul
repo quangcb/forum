@@ -1,0 +1,18 @@
+<!DOCTYPE footer.zul>
+<zk xmlns:n="native">
+	<div sclass="footer-container">
+		<div>
+			<a href="/" style="color: rgb(59,73,223)">Fita's Forum</a> — Một diễn đàn giao lưu, trao đổi học tập, chia sẻ kinh nghiệm cho các nhà phát triển phần mềm. 
+		</div>
+		<div>
+			Đồng hành cùng các bạn sinh viên khoa CNTT.
+		</div>
+		<div>
+			Made by Hoang Minh Quang and ZK framework. Fita's Forum © 2022.
+		</div>
+		<!-- zk image -->
+		<a href="http://www.zkoss.org/" sclass="logo">
+			<image src="/images/zklogo.png" height="48px" width="48px" tooltiptext="logo zk"/>
+		</a>
+	</div>
+</zk>

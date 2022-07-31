@@ -1,0 +1,88 @@
+<!DOCTYPE header.zul>
+<zk xmlns:n="native" xmlns:ca="client/attribute">
+	<!-- Thêm header -->
+		<div style="display: flex">
+			<a href="/" sclass="logo-text">
+				<image height="2.5rem" width="auto" src="/images/favicon/logo.png" tooltiptext="logo Fita's Forum"/>
+			</a>
+			<a href="/" sclass="logo">
+				<image height="2.5rem" width="2.5rem" src="/images/favicon/favicon.png" tooltiptext="logo Fita's Forum"/>
+			</a>
+		</div>
+		
+		<div class="search-container" apply="vnua.fita.controller.SearchController" style="border: 1px solid rgb(59,73,223);">
+		    <textbox class="input" type="text" placeholder="Tìm kiếm..."/>
+		    <button id="btnSearch" sclass="btnSearch" type="submit" image="/images/searchBtn.png" ca:aria-label="Nút tìm kiếm"/>
+	    </div> 
+	    
+		<div sclass="header-right">
+			<!-- chưa đăng nhập -->
+			<div sclass="create" if="${empty sessionScope.userCredential.anonymous}" 
+			apply="vnua.fita.controller.LoginController">
+					<button id="pageLogin" sclass="btnCreate"
+						label="Đăng nhập" />
+			</div>
+			
+			<div sclass="create" if="${empty sessionScope.userCredential.anonymous}" 
+			apply="vnua.fita.controller.LoginController">
+					<button id="pageRegistration" sclass="btnCreate"
+						label="Đăng ký" />
+			</div>
+			
+			<!-- đã đăng nhập -->
+			<div apply="vnua.fita.controller.HomeController" if="${not empty sessionScope.userCredential.anonymous}">
+						<button sclass="btnCreate" id="createPost" label="Tạo bài đăng" />
+			</div>
+			
+			<div apply="vnua.fita.controller.HomeController" if="${not empty sessionScope.userCredential.anonymous}">
+				<a id="notify-link" href="/notification.zul">
+					<button sclass="btnNotify" id="notify" image="/images/bell.png"  ca:aria-label="Nút thông báo">
+					</button>
+				</a>
+			</div>
+			
+			<div apply="vnua.fita.controller.HomeController">
+				<image id="avatar" width="40px" height="40px" tooltiptext="avatar" style="border-radius: 50%; margin: 0;"  if="${not empty sessionScope.userCredential.anonymous}" popup="profile, position=after_end"/>
+				<popup id="profile">
+					<n:ul sclass="list">
+						<n:li if="${not empty sessionScope.userCredential.anonymous}" style="background-color: rgb(245, 245, 245)">
+							<a id="displayName" label="${sessionScope.userCredential.name}" sclass="display-name" />
+						</n:li>
+						<n:li if="${not empty sessionScope.userCredential.anonymous}" >
+							<a id="dashboard" >
+								<span>
+									<image src="/images/dashboard.png"></image>
+								</span>
+								<label sclass="link-font" value="Dashboard" />
+							</a>
+						</n:li>
+						
+						<n:li if="${not empty sessionScope.userCredential.anonymous}" >
+							<a href="/settings">
+								<image src="/images/setting.png"></image>
+								<label sclass="link-font" value="Cài đặt" />
+							</a>
+						</n:li>
+							
+						<!-- <n:li if="${not empty sessionScope.adminCredential.anonymous}">
+							<label value="${sessionScope.adminCredential.name}" />
+						</n:li>
+					
+						admin == superadmin
+						<n:li if="${not empty sessionScope.superAdminCredential.anonymous}">
+							<label value="${sessionScope.superAdminCredential.name}" />
+						</n:li> -->
+						
+						<n:li if="${not empty sessionScope.userCredential.anonymous}">
+							<a sclass="logout" apply="vnua.fita.controller.LogoutController" >
+								<image src="/images/logout.png"></image>
+								<label sclass="link-font" value="Đăng xuất" />
+							</a>
+						</n:li>
+						
+					</n:ul>
+				</popup>
+			</div>
+			
+		</div>
+</zk>

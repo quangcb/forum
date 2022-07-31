@@ -1,0 +1,29 @@
+<!DOCTYPE index.zul>
+<?root-attributes lang="vi"?>
+<?meta name="description" content="Trang chủ diễn đàn Fita's Forum"?>
+<?meta http-equiv="Content-Type" content="text/html; charset=UTF-8"?>
+<?page title="Fita's Forum"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="apple-touch-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico"?>
+<?link rel="stylesheet" type="text/css" href="/styles/index.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/header.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/footer.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/main-content.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/sidebar-left.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/sidebar-right.css"?>
+
+<?component name="Content" macroURI="/components/content.zul"?>
+<?component name="Header" macroURI="/components/header.zul"?>
+<?component name="Footer" macroURI="/components/footer.zul"?>
+<zk>
+	<div sclass="header">
+		<Header sclass="header__container"/>
+	</div>
+	
+		<Content sclass="content"/>
+	
+	<div sclass="footer">
+		<Footer />
+	</div>
+</zk>

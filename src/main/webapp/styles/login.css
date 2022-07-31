@@ -1,0 +1,141 @@
+
+body{
+	padding: 0 !important;
+}
+
+.z-window-header{
+	color: rgb(0,0,0);
+	padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.z-radio-content{
+	color: rgb(0,0,0);
+}
+
+.bg{
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	height: 100%;
+	background-color: #F4D03F;
+	background-image: linear-gradient(77deg, #F4D03F 0%, #16A085 100%);	
+}
+
+.form{
+	width: 24rem;
+	height: auto;
+	background: rgba(217, 216, 216, 0.24);
+	border-radius: 1rem;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+}
+
+.form >div{
+	padding: 0 3rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+.title label, .label-login{
+	color: white;
+}
+
+.title {
+	font-size: 3rem;
+	font-weight: bold;
+	text-align: center;
+	margin: 2rem 0;
+}
+
+.label-login{
+	font-size: 1.2rem;
+}
+
+.login{
+	line-height: 22px;
+	font-size: 1.2rem;
+	width: 100%;
+	border-radius: 0.625rem;
+	margin: 0.5rem 0;
+	background-color: rgb(24, 119, 242);
+}
+
+.login:hover{
+	background-color: rgb(22, 111, 229) !important;
+}
+
+.signup{
+	text-align: center;
+	margin: 1rem 0;
+}
+
+.signup button{
+	padding: 0.5rem 2rem;
+	line-height: 22px;
+	font-size: 1.2rem;
+	border-radius: 0.625rem;
+	background-color: rgb(66, 183, 42);
+}
+
+.signup button:hover {
+	background-color: rgb(54, 164, 32) !important;
+	border-color: rgb(54, 164, 32);
+}
+
+.signup button:focus {
+	background-color: rgb(66, 183, 42) !important;
+	border-color: rgb(54, 164, 32);
+}
+
+.textbox{
+	width: 100%;
+}
+
+.textbox-login{
+	width: 100%;
+	margin: 1rem 0;
+}
+
+.gecko .z-draggable-over>* {
+    -moz-user-select: none !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+}
+
+.z-row{
+	text-align: justify !important;
+}
+
+.accept{
+	word-wrap: break-word;
+}
+
+@media only screen and (min-width: 768px){
+	.form{
+		display: flex;
+	    justify-content: center;
+		align-items: center;
+		max-width: 24rem;
+		background: rgba(217, 216, 216, 0.24);
+		border-radius: 1rem;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(6px);
+		-webkit-backdrop-filter: blur(6px);
+	}	
+	
+	
+	.form > div{
+		width: 24rem;
+		padding: 0 3rem;
+	}
+
+}

@@ -1,0 +1,13 @@
+<!DOCTYPE  content.zul>
+
+<?component name="MainContent" macroURI="/components/main-content.zul"?>
+<?component name="SidebarLeft" macroURI="/components/sidebar-left.zul"?>
+<?component name="SidebarRight" macroURI="/components/sidebar-right.zul"?>
+<zk>
+<style src="/styles/components/content.css" />
+	<div sclass="page-content">
+		<SidebarLeft sclass="sidebar-left__container"/>
+		<MainContent sclass= "content"/>
+		<SidebarRight sclass="sidebar-right__container"/>
+	</div>
+</zk>

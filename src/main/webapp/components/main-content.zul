@@ -1,0 +1,51 @@
+<!DOCTYPE main-content.zul>
+<zk xmlns:n="native">
+	<div sclass="story" apply="vnua.fita.controller.HomeController">
+		<div height="50px" style="margin-top:2rem;">
+			<label id="titleLabel" style="font-size: 1.75rem;" value="Danh sách bài đăng"/>
+		</div>
+		<listbox id="postListbox" mold="paging" pageSize="10" style="border: 0px; border-radius: 6px;" model="${$composer.posts}" emptyMessage="Không tìm thấy kết quả">
+			<template name="model">
+				 <listitem sclass="listItem">
+					<listcell>
+							<div style="display: flex; padding-left: 0; padding-right: 0;">
+								<image src="${each.profileImageUrl}" width="40px" height="40px" style="margin: 0; border-radius: 50%;" tooltiptext="avatar"/>
+								<div style="padding: 0; padding-left: 0.75rem; display:flex; flex-direction: column;">
+									<a href="/profile.zul?id=${each.ownerStudentCode}" label="${each.ownerDisplayName}" sclass="display-name" />
+									<label style="font-size: 13px" value="${each.creationDate}" />
+								</div>
+							</div>
+							<div style=" padding: 0 0 0 2.5rem;">
+								<a href="/post.zul?postid=${each.postId}" label="${each.title}" style="font-size: 1.5rem; line-height: 2rem; font-weight: 600; color: rgb(23,23,23);"/>
+							</div>
+							<div style=" padding-left: 1.25rem;">
+								<div sclass="list-tag">
+									<div if="${not empty each.tag1}"><a href="/tag.zul?t=${ each.tag1}" label="#${each.tag1 }"/></div>
+									<div if="${not empty each.tag2}"><a href="/tag.zul?t=${ each.tag2}" label="#${each.tag2 }"/></div>
+									<div if="${not empty each.tag3}"><a href="/tag.zul?t=${ each.tag3}" label="#${each.tag3 }"/></div>
+									<div if="${not empty each.tag4}"><a href="/tag.zul?t=${ each.tag4}" label="#${each.tag4 }"/></div>
+								</div>
+							</div>
+							
+							<div style="padding-left: 2.5rem; display: flex;">
+								<!-- <a href="/post.zul?postid=${each.postId}#comment" style="color: rgb(64,64,64); display: flex"> -->
+								<div style="display: flex; padding: 0;">
+									<n:svg class="crayons-icon" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+										<n:path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></n:path>
+									</n:svg>
+									<label value="${each.score} Thích" style="margin-right: 1.5rem;" />
+								</div>
+								<div style="display: flex; padding: 0;">
+									<n:svg class="crayons-icon" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+										<n:path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></n:path>
+									</n:svg>
+									<label value="${each.commentCount} Bình luận" />
+								</div>
+								<!-- </a> -->
+							</div>
+					</listcell>
+				</listitem> 
+			</template>
+		</listbox>
+	</div>
+</zk>

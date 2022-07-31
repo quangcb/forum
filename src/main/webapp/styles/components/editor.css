@@ -1,0 +1,68 @@
+.cke_editable img{
+		width:100% !important;
+		height: 100% !important;
+	}
+	
+	
+	.cke_dialog_open {
+		width: 100vw;
+		height: 100%;
+	}
+	
+	.title {
+		font-weight: bold;
+		font-size: 12px;
+	}
+	.demoTbx .z-tab {
+		margin-right: 2px;
+	}
+
+	.editor__container {
+	    width: 100%;
+	    height: auto;
+	    overflow: auto;
+	}
+	
+	
+	.cke_editable img {
+		width: 100px !important;
+		height: 100px !important;
+	}
+	
+	
+	.editor__title {
+	    resize: none;
+	    padding: 2rem;
+	    width: 100%;
+	    height: 10rem;
+	}
+	
+	.z-window-content {
+		overflow: auto !important;
+	}
+	
+	.z-window-header{
+		color: rgb(0,0,0);
+		padding: 1rem;
+	    font-size: 2rem;
+	    font-weight: bold;
+	}
+	
+	.z-textbox{
+		border-radius: initial;
+		border-bottom: none;
+	}
+	
+	@media only screen and (min-width: 768px) {
+		.editor__container {
+		    width: 100%;
+		    height: 100%;
+		}
+	}
+	
+	@media only screen and (min-width: 1024px) {
+		.editor__container {
+		    width: 40rem;
+		    height: 100%;
+		}
+	} 

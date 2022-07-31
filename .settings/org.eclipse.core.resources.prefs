@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/main/java/vnua/fita/controller/LoginController.java=UTF-8
+encoding//src/main/java/vnua/fita/controller/RegistrationController.java=UTF-8
+encoding//src/main/java/vnua/fita/service/impl/CommentServiceImpl.java=UTF-8
+encoding//src/main/java/vnua/fita/service/impl/PostServiceImpl.java=UTF-8
+encoding//src/main/java/vnua/fita/service/impl/PostTagServiceImpl.java=UTF-8
+encoding//src/main/java/vnua/fita/service/impl/VoteServiceImpl.java=UTF-8

@@ -1,0 +1,67 @@
+
+	.sidebar-link{
+		color: rgb(64,64,64);
+		padding: 0.5rem 1rem;
+		line-height: 1.5rem;
+		width: 100%;
+	}
+
+	ul{
+		padding: 0;
+		margin: 0;
+	}
+
+	li{
+		display: flex;
+	}
+
+	.sidebar-link:hover{
+		background-color: rgb(59,73,233,0.1);
+		color: rgb(47,58,178);
+		text-decoration: underline;
+		border-radius: 6px;
+	}
+	
+	.orther{
+		padding: 0.5rem 0.75rem;
+	}
+	
+	.orther span{
+		line-height: 1.5rem !important;
+		font-weight: 700 !important;
+	}
+
+	.sidebar-link{
+		display:flex;
+	}
+	
+	.sidebar-link .link-icon{
+		display:flex;
+		margin-right: 0.5rem;
+	}
+	
+	.z-label{
+		line-height: 1.5rem !important;
+	}
+
+	.sidebar-link link-icon svg {
+		height: 24px;
+	    width: 24px;
+	    vertical-align: middle;
+	    display: inline-block;
+	}
+	
+	.link-icon-info{
+		display: flex;
+		justify-content: flex-start;
+	}
+	
+	.link-icon-info a{
+		margin: 0 0.25rem 0 0;
+		padding: 0.5rem;
+	}
+	
+	.link-icon-info a svg path{
+		fill: rgb(64,64,64) !important;
+	}
+	

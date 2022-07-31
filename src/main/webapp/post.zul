@@ -1,0 +1,147 @@
+<!DOCTYPE index.zul>
+<?root-attributes lang="vi"?>
+<?meta name="description" content="Bài đăng Fita's Forum"?>
+<?meta http-equiv="Content-Type" content="text/html; charset=UTF-8"?>
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="apple-touch-icon" href="/images/favicon/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico"?>
+<?component name="Content" macroURI="/components/content.zul"?>
+<?component name="Header" macroURI="/components/header.zul"?>
+<?component name="Footer" macroURI="/components/footer.zul"?>
+<?link rel="stylesheet" type="text/css" href="/styles/index.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/login.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/post.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/footer.css"?>
+<?link rel="stylesheet" type="text/css" href="/styles/components/header.css"?>
+
+<zk>
+
+	<div sclass="header">
+		<Header sclass="header__container" />
+	</div>
+	<div sclass="content" apply="vnua.fita.controller.PostController">
+		<div sclass="page-content">
+			<div sclass="sidebar-left-container">
+				<div>
+					<button id="btnLike" sclass="btn-like-inactive" image="/images/like1.png" />
+					<button id="btnUnlike" sclass="btn-like-active" image="/images/like2.png" />
+				</div>
+			</div>
+			<div sclass="post-content">
+				<div style="display: flex; justify-content: space-between;">
+					<div sclass="post-header" style="display: flex; padding-left: 0; padding-right: 0;">
+						<image id="postAvatar" width="40px" height="40px" tooltiptext="avatar" style="border-radius: 50%; margin: 0;" />
+						<div style="padding: 0; padding-left: 0.75rem; display:flex; flex-direction: column;">
+							<a id="postProfile" href=""></a>
+							<label id="postTimestamp" sclass="post-timestamp">
+							</label>
+						</div>
+					</div>
+					<div>
+						<button sclass="more-btn" image="/images/more.png" popup="editPost, position=after_end"/>
+					</div>
+				</div>
+				<popup id="editPost" apply="vnua.fita.controller.UpdatePostController">
+					<button sclass="more-btn-item" id="more-btn-edit-post" label="Sửa" forward="onClick=editPost.onSave"/>
+					<button sclass="more-btn-item" id="more-btn-delete-post" label="Xoá" forward="onClick=editPost.onDelete"/>
+				</popup>
+				<div sclass="post-tittle" style=" margin: 1rem 0">
+					<label id="postTitle" style="font-weight: 700; font-size: 30px;" ></label>
+				</div>
+				<div>
+					<div sclass="list-tag">
+						<div id="boxtag1" sclass="tag-close"><label id="tag1"/></div>
+						<div id="boxtag2" sclass="tag-close"><label id="tag2"/></div>
+						<div id="boxtag3" sclass="tag-close"><label id="tag3"/></div>
+						<div id="boxtag4" sclass="tag-close"><label id="tag4"/></div>
+					</div>
+				</div>
+				<div>
+					<html id="postBody" style="font-size: 20px; line-height: 30px"/>
+				</div>
+				<div sclass="create-comment">
+					<ckeditor id="ed" width="100%" height="100%"
+						filebrowserImageUploadUrl="/images"
+						customConfigurationsPath="/config.js">
+					</ckeditor>
+
+					<separator height="1rem" />
+
+					<div style="margin: 0 0 1rem 0;">
+						<button sclass="createCommentBtn" label="Tạo comment" />
+					</div>
+				</div>
+				<div>
+					<listbox id="commentListbox" sclass="listbox" style="border: 0px;"  model="${$composer.comments}">
+						<template name="model">
+							<listitem>
+								<listcell>
+									<div>
+										<div style="display: flex; justify-content: space-between;">
+											<div style="display: flex; padding-left: 0; padding-right: 0;">
+												<image src="${each.profileImageUrl}" width="40px" height="40px" style="margin: 0; border-radius: 50%;" />
+												<div style="padding: 0; padding-left: 0.75rem; display:flex; flex-direction: column;">
+													<a href="/profile.zul?id=${each.ownerStudentCode}" label="${each.ownerDisplayName}" />
+													<label value="${each.creationDate}" />
+												</div>
+											</div>
+											<div>
+												<button sclass="more-btn" image="/images/more.png" popup="edit${each.id }, position=after_end"/>
+											</div>
+										</div>
+										<popup id="edit${each.id }">
+											<button sclass="more-btn-item" id="more-btn-edit${each.id }" label="Sửa" forward="onClick=commentListbox.onChange"/>
+											<button sclass="more-btn-item" id="more-btn-delete${each.id }" label="Xoá" forward="onClick=commentListbox.onDelete"/>
+										</popup>
+										
+										<label sclass="parent_id" value="${each.id}" style="display: none;" />
+										<div style="margin: 1rem 0 1rem 3rem;">
+											<div  if="${not empty each.creationDateParent}" style="background-color: rgb(249, 249, 249); padding:.5rem; border-left: 5px solid #e9e9e9;">
+											 	<div style="display: flex; padding-left: 0; padding-right: 0;" sclass="test reply">
+													<image src="${each.profileImageUrlParent}" width="32px" height="32px" style="margin: 0; border-radius: 50%;" />
+													<div style="padding: 0; padding-left: 0.75rem; display:flex; flex-direction: column;">
+														<a href="/profile.zul?id=${each.ownerStudentCodeParent}" label="${each.ownerDisplayNameParent}" />
+														<label value="${each.creationDateParent}" />
+													</div>
+												</div>
+												<div>
+													<html sclass="html-text" content="${each.textParent}" />
+												</div>
+											</div>
+											<html sclass="html-text" content="${each.text}" />
+										</div>
+										<button id="btnReply${each.id}" sclass="reply-btn" image="/images/comment.png" label="Trả lời" forward="onClick=commentListbox.onSave"/>
+										<label value="${each.lastEditDate}" />
+										<div id="reply${each.id }" style="display: none;">
+											<div style="margin-top: 1rem;">
+												<ckeditor id="ed${each.id}"
+													width="100%" height="100%"
+													filebrowserImageUploadUrl="/images"
+													customConfigurationsPath="/config.js">
+												</ckeditor>
+												<separator height="1rem" />
+	
+												<div>
+													<button forward="onClick=commentListbox.onEdit" id="${each.id}" sclass="createChildCommentBtn" label="Tạo comment" />
+												</div>
+											</div>
+										</div>
+									</div>
+								</listcell>
+							</listitem>
+						</template>
+					</listbox>
+				</div>
+			</div>
+			<div sclass="sidebar-right-container">
+				<div style="background-color: rgb(250, 250, 250); box-shadow: 0 0 0 1px rgb(23 23 23 / 5%); border-radius: 6px">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div sclass="footer">
+		<Footer />
+	</div>
+</zk>

@@ -1,0 +1,127 @@
+p img{
+		width: 100% !important;
+		height:100% !important;
+	}
+	
+	.story{
+		background-color: rgb(245,245,245);
+	}
+	
+	.story div{
+		padding: 1.25rem;
+	}
+	
+	.content{
+		margin: 11rem auto auto auto; 
+		width: 100%;
+		max-width: 1024px;
+		display: grid; 
+		gap:1rem;
+		grid-template-columns: 100%;
+	}
+	
+	@media only screen and (min-width: 768px) {
+		.content{
+			grid-template-columns: 240px 1fr;
+		}
+	}
+	.label-header{
+	 	margin: auto; 
+	 	max-width: 1024px;
+	 	padding: 2rem 1rem 1rem 1rem !important;
+	}
+	
+	.z-focus-a{
+		display: none !important;
+		visibility:hidden;
+	}
+	
+	.z-listbox-body .z-listbox-emptybody td{
+		color: rgb(0,0,0) !important;
+	}
+	
+	.z-listbox-body{
+		padding: 0 !important;
+	}
+	
+	.z-listcell-content{
+		background-color: white;
+		cursor: default;
+		padding: 0 !important;
+	}
+	
+	.z-listcell-content > .z-div{
+		padding: 1rem 0.5rem;
+	}
+	
+	.z-paging{
+		background-color: #cbcbcb;
+    	border-radius: 5px;
+	}
+	
+	.z-paging-info{
+		color: rgb(0, 0, 0);
+	}
+	
+	.display-name{
+		font-size: 15px; 
+		color:rgb(5,5,5) !important; 
+		font-weight: 600;
+	}
+	.display-name:hover{
+		color: rgb(47,58,178) !important;
+		text-decoration: underline !important;
+	}
+	
+	.list-count{
+		padding: 0;
+		margin: 0 1rem 0 0;
+		border-radius: 6px;
+		background-color: rgb(250, 250, 250);
+		box-shadow: 0 0 0 1px rgb(23,23,23,.05);
+		height: max-content;
+	}
+
+	.tab-post , .tab-comment{
+		display: flex;
+		padding: 0.75rem 0.5rem;
+		margin: .5rem;
+	}
+	
+	.avatar{
+	    border: 8px solid rgb(245,245,245);
+	    border-radius: 50%;
+	}
+	
+	.info{
+		display: flex; 
+		justify-content: center;
+	}
+	
+	.displayName{
+		font-size: 1.675rem;
+		font-weight: 800;
+	}
+	
+	.creationDate{
+		padding-left: .5rem;
+		line-height: 30px;
+	}
+	
+	.info-name{
+		padding: 0 !important;
+	}
+	
+	.list-tag{
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 1.25rem !important;
+	}
+
+	.list-tag div{
+		display: flex;
+		border-radius: .25rem;
+		padding: .5rem;
+		margin: .5rem .5rem 0 0;
+		background-color: rgb(237,237,237);
+	}
